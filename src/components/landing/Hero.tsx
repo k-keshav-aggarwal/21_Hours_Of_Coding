@@ -17,30 +17,21 @@ export const Hero = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 leading-tight">
             A Smarter Way for Communities to Share Energy
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
             AI-driven market design that balances households, prosumers, retailers and grid operators.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-white shadow-lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
               onClick={() => navigate('/dashboard')}
             >
               Explore Demo
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
-              onClick={() => navigate('/upload')}
-            >
-              <Upload className="mr-2 h-4 w-4" />
-              Upload AI Model
             </Button>
           </div>
         </div>

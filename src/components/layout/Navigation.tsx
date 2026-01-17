@@ -1,5 +1,6 @@
 import { NavLink } from "@/components/NavLink";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import { LayoutDashboard, Settings, Upload, BarChart3 } from "lucide-react";
 
 export const Navigation = () => {
@@ -12,7 +13,7 @@ export const Navigation = () => {
               <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
                 <BarChart3 className="h-5 w-5 text-primary-foreground" />
               </div>
-              <span className="font-semibold text-lg">Energy Share</span>
+              <span className="font-semibold text-lg">21 Hours of Coding</span>
             </NavLink>
 
             <div className="hidden md:flex items-center gap-1">
@@ -32,18 +33,13 @@ export const Navigation = () => {
                 <Settings className="h-4 w-4" />
                 Simulator
               </NavLink>
-              <NavLink
-                to="/upload"
-                className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-                activeClassName="text-foreground bg-muted"
-              >
-                <Upload className="h-4 w-4" />
-                Upload Model
-              </NavLink>
             </div>
           </div>
 
-          <Button size="sm">Get Started</Button>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Button size="sm">Get Started</Button>
+          </div>
         </div>
       </div>
     </nav>

@@ -1,58 +1,54 @@
-// Email Us Page
-export default function EmailUsPage() {
-  return (
-    <div className="container mx-auto px-6 py-16 max-w-3xl">
-      <h1 className="text-3xl font-semibold mb-6">Email Us</h1>
+import BaseFooterPage from "./BaseFooterPage";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
+const EmailUs = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast.success("Message sent successfully! We will get back to you soon.");
+  };
+
+  return (
+    <BaseFooterPage title="Email Us">
       <p className="text-muted-foreground mb-8">
         Need help, have a question, or want to collaborate? Fill out the form below and our team will get back to you
-        within 24&nbsp;48 hours.
+        within 24-48 hours.
       </p>
 
-      <form className="space-y-6">
-        <div>
-          <label className="block mb-2 font-medium">Your Name</label>
-          <input
-            type="text"
-            className="w-full p-3 rounded-lg border border-border bg-background"
-            placeholder="Enter your name"
+      <form className="space-y-6" onSubmit={handleSubmit}>
+        <div className="space-y-2">
+          <label className="text-sm font-medium">Your Name</label>
+          <Input placeholder="Enter your name" required />
+        </div>
+
+        <div className="space-y-2">
+          <label className="text-sm font-medium">Email Address</label>
+          <Input type="email" placeholder="you@example.com" required />
+        </div>
+
+        <div className="space-y-2">
+          <label className="text-sm font-medium">Subject</label>
+          <Input placeholder="How can we help?" required />
+        </div>
+
+        <div className="space-y-2">
+          <label className="text-sm font-medium">Message</label>
+          <Textarea 
+            rows={6} 
+            placeholder="Write your message here..." 
+            className="resize-none"
+            required 
           />
         </div>
 
-        <div>
-          <label className="block mb-2 font-medium">Email Address</label>
-          <input
-            type="email"
-            className="w-full p-3 rounded-lg border border-border bg-background"
-            placeholder="you@example.com"
-          />
-        </div>
-
-        <div>
-          <label className="block mb-2 font-medium">Subject</label>
-          <input
-            type="text"
-            className="w-full p-3 rounded-lg border border-border bg-background"
-            placeholder="How can we help?"
-          />
-        </div>
-
-        <div>
-          <label className="block mb-2 font-medium">Message</label>
-          <textarea
-            rows={6}
-            className="w-full p-3 rounded-lg border border-border bg-background"
-            placeholder="Write your message here..."
-          ></textarea>
-        </div>
-
-        <button
-          type="submit"
-          className="px-6 py-3 rounded-lg bg-primary text-primary-foreground shadow hover:opacity-90 transition"
-        >
+        <Button type="submit" className="w-full">
           Send Message
-        </button>
+        </Button>
       </form>
-    </div>
+    </BaseFooterPage>
   );
-}
+};
+
+export default EmailUs;

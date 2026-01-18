@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import PolicySimulator from "./pages/PolicySimulator";
+import Community from "./pages/Community";
 import NotFound from "./pages/NotFound";
 
 import AboutRes from "./pages/FooterLinks/AboutRes";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/simulator" element={<PolicySimulator />} />
+          <Route path="/community" element={<Community />} />
           <Route path="/about-research" element={<AboutRes />} />
           <Route path="/api-documentation" element={<APIDoc />} />
           <Route path="/documentation" element={<Documentation />} />

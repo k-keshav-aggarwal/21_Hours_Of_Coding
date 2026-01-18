@@ -1,8 +1,7 @@
-export default function DocumentationPage() {
-  return (
-  <div className="container mx-auto px-6 py-16">
-    <h1 className="text-3xl font-semibold mb-6">Platform Features</h1>
+import BaseFooterPage from "./BaseFooterPage";
 
+const Features = () => (
+  <BaseFooterPage title="Platform Features">
     <section className="mb-10">
       <h2 className="text-xl font-semibold mb-2">AI-Powered Energy Allocation</h2>
       <p className="text-muted-foreground">
@@ -41,15 +40,7 @@ export default function DocumentationPage() {
         Works seamlessly with smart meters, inverters, local sensors, and battery storage systems.
       </p>
     </section>
-
-    <div className="mt-12">
-      <a
-        href="/pricing"
-        className="inline-block rounded-lg px-5 py-3 bg-primary text-primary-foreground shadow hover:opacity-90 transition"
-      >
-        View Pricing
-      </a>
-    </div>
-  </div>
+  </BaseFooterPage>
 );
-}
+
+export default Features;
